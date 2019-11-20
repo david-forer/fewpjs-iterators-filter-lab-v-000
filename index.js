@@ -5,7 +5,13 @@ function findMatching(drivers, string) {
 }
 
 function fuzzyMatch(drivers, string) {
-  
+  return drivers.filter(function(driver) {
+    let index = string.length;
+    let compDriver = driver.split('');
+    compDriver = compDriver.splice(0, index);
+    compDriver = compDriver.join('');
+    return compDriver === string;
+  })
   
 }
 
